@@ -9,7 +9,97 @@
   </head>
 
   <body>
+
+    <p id="lat">
+    </p>
+
+    <p id="lon">
+    </p>
     <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script>
+      $(document).ready(function() {
+        getGeo()
+      })
+    </script>
+    <script>
+    // function that gets the users geolocation
+            function getGeo(){
+
+              // Get the current position with the HTML5 geolocation API
+              navigator.geolocation.watchPosition(function(position, handle_error, enableHighAccuracy) {
+
+                // assign the geolocation properties to variables
+              	var latitude = position.coords.latitude;
+              	var longitude = position.coords.longitude;
+              	var altitude = position.coords.altitude;
+              	var accuracy = position.coords.accuracy;
+              	var altitudeAccuracy = position.coords.altitudeAccuracy;
+              	var heading = position.coords.heading;
+              	var speed = position.coords.speed;
+
+                // use jQuery to create some markup and dynamically insert it into the DOM.
+
+                $('#lat').html(latitude)
+                $("#lon").html(longitude)
+                initialize()
+                doSetItem()
+              }) // end of watchPosition()
+
+            } // end of getGeo()
+
+            // call getGeo() on page load
+            getGeo();
+
+            // function that writes lat/lon to localStorage
+            function doSetItem() {
+
+             // get the lat and lon ready assigned to variables
+             var lat = $("#lat").text()
+             var lon = $("#lon").text()
+             var datestamp = new Date()
+             var epoch = datestamp.getTime()
+
+             // create the JSON for the database
+             var storageLocationObject = {"lat": lat, "lon": lon}
+
+             // serialize the object into a string
+             var stringyObject = JSON.stringify(storageLocationObject)
+
+             localStorage.setItem(datestamp, stringyObject)
+            }
+
+            // function to getItem()
+            function doGetItem() {
+
+              var a = localStorage.getItem()
+              console.log(a)
+
+            } // end of getItem()
+            doGetItem()
+
+            function doShowAll() {
+                   var key = "";
+                   var pairs = "<tr><th>Date</th><th>Location</th></tr>\n";
+                   var i=0;
+                   for (i=0; i<=localStorage.length-1; i++) {
+                     key = localStorage.key(i);
+                     pairs += "<tr><td>"+key+"</td>\n<td>"+localStorage.getItem(key)+"</td></tr>\n";
+
+                   }
+
+                   $('#pairs').html(pairs)
+            }
+            doShowAll()
+
+            // retrieve localStorage values and make them usable
+            function usableValue() {
+
+              var carlos = l
+
+            } // end of usableValue()
+
+            </script>
+
 
   </body>
 
