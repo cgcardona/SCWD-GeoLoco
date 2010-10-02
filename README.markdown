@@ -18,3 +18,13 @@ store the geo-coordinates using HTML5 localStorage.
 Each time the user returns to the site they will be get their long and lat added
 to the db and they will see a list of all the places they have previously
 visited the website.
+
+Caveat (or some other fancy word)
+---------------------------------
+
+Because I am developing this app for a live talk I am seeing how fast I can code
+it from scratch. That is why there is the same code in so many different files
+and branches. 
+
+I am also taking this time to learn a bit more about git. I plan to clean up all
+these branches and files before my talk.....or not.
