@@ -21,20 +21,28 @@
 
           $("#lat").html(latitude)
           $("#lon").html(longitude)
+
           putInfo()
         })
       }
       getGeo()
 
       function putInfo() {
+        var storeLatitude = $("#lat").text()
+        var storeLongitude = $("#lon").text()
+        var dateStamp = new Date()
 
-        var storeLat = $("#lat").text()
-        var storeLon = $("#lon").text()
-        var datestamp = new Date()
+        //create JSON with 2 vars
 
-        localStorage.setItem(datestamp, storeLat)
+        var storageObject = {"lat": storeLatitude, "lon": storeLongitude }
+
+        //stringify object
+
+        var stringyObject = JSON.stringify(storageObject)
+
+        localStorage.setItem(dateStamp, stringyObject)
+
       }
-
     </script>
   </body>
 
