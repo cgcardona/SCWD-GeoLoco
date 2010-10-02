@@ -13,16 +13,28 @@
     <p id="lon"></p>
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script>
-    $(document).ready(function() {
-      // get the users location
-      navigator.geolocation.watchPosition(function(position, handle_error, enableHighAccuracy) {
-        var latitude = position.coords.latitude
-        var longitude = position.coords.longitude
+      function getGeo() {
+        // get the users location
+        navigator.geolocation.watchPosition(function(position, handle_error, enableHighAccuracy) {
+          var latitude = position.coords.latitude
+          var longitude = position.coords.longitude
 
-        $("#lat").html(latitude)
-        $("#lon").html(longitude)
-      })
-    })
+          $("#lat").html(latitude)
+          $("#lon").html(longitude)
+          putInfo()
+        })
+      }
+      getGeo()
+
+      function putInfo() {
+
+        var storeLat = $("#lat").text()
+        var storeLon = $("#lon").text()
+        var datestamp = new Date()
+
+        localStorage.setItem(datestamp, storeLat)
+      }
+
     </script>
   </body>
 
