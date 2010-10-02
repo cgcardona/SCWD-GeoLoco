@@ -15,6 +15,9 @@
 
     <p id="lon">
     </p>
+
+    <p id="pairs">
+    </p>
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script>
       $(document).ready(function() {
@@ -31,24 +34,16 @@
                 // assign the geolocation properties to variables
               	var latitude = position.coords.latitude;
               	var longitude = position.coords.longitude;
-              	var altitude = position.coords.altitude;
-              	var accuracy = position.coords.accuracy;
-              	var altitudeAccuracy = position.coords.altitudeAccuracy;
-              	var heading = position.coords.heading;
-              	var speed = position.coords.speed;
 
                 // use jQuery to create some markup and dynamically insert it into the DOM.
 
                 $('#lat').html(latitude)
                 $("#lon").html(longitude)
-                initialize()
                 doSetItem()
               }) // end of watchPosition()
 
             } // end of getGeo()
 
-            // call getGeo() on page load
-            getGeo();
 
             // function that writes lat/lon to localStorage
             function doSetItem() {
