@@ -27,6 +27,7 @@ to the db and they will see a list of all the places they have previously
 visited the website.
 
 The magic lies in 3 functions:
+
 1. getGeo() - This is called on pageload. It uses the geolocation API to get the
 users lat and lon and print them on the page. The last thing this function does
 is call the doSetItem() function.
