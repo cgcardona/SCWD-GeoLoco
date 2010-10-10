@@ -40,6 +40,30 @@ The final thing that it does is call the doGetItem() function.
 3. doGetItem() - This function uses a for loop to get all of the values from the
 localStorage and writes them on the screen in <p id="pairs">.
 
+The CSS magic lies in 3 new styles:
+
+1. border-radius:5px; - This is the wonderful new way to create rounded corners.
+You can be more specific such as border-top-left-radius:5px;
+2. -webkit-box-shadow:#000 0 0 20px; - This is the way to have a drop shadow
+come off of an element. It takes 4 properties -
+- #000 - this is the color that you want the drop shadow to be.
+- 0 - this is a px measurment. In this case it is 0px. This is how far along the
+x axis you want the shadow to be.
+- 0 - this is also a px measurment. In this case it is also 0px. This is how far
+along the y axis you want the drop shadow to be.
+- 20px - this is for a fade. How far you want the shadow to fall off of the
+element.
+- CAVEAT - prepend with -webkit- for webkit browsers and -moz- for firefox.
+3. text-shadow:#000 1px 1px 1px; - This is how to add a drop shadow to text. It
+also takes the same 4 arguments as drop-shadow.
+- #000 - this is the color that you want the text drop shadow to be.
+- 0 - this is a px measurment. In this case it is 1px. This is how far along the
+x axis you want the shadow to be.
+- 0 - this is also a px measurment. In this case it is also 1px. This is how far
+along the y axis you want the drop shadow to be.
+- 1px - this is for a fade. How far you want the shadow to fall off of the
+element.
+
 Supported Browser
 -----------------
 
