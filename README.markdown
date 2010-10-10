@@ -24,7 +24,7 @@ browser will grab your long and lat and display it on the screen. It will also
 store the geo-coordinates using HTML5 localStorage.
 
 Each time the user returns to the site they will be get their long and lat added
-to the db and they will see a list of all the places they have previously
+to the database and they will see a list of all the places they have previously
 visited the website.
 
 The magic lies in 3 functions:
@@ -32,14 +32,14 @@ The magic lies in 3 functions:
 1. getGeo() - This is called on pageload. It uses the geolocation API to get the
 users lat and lon and print them on the page. The last thing this function does
 is call the doSetItem() function.
-2. doSetItem() - This function gets the lat and lon from the screen and created
+2. doSetItem() - This function gets the lat and lon from the screen and creates
 a JSON object with 'Latitude: yourLatitude' and 'Longitude: yourLongitude' as
-the key/value pairs. It also gets a Date object. Next it creates uses
+the key/value pairs. It also gets a Date object. Next it uses
 JSON.stringify() to turn the JSON into string. Then it saves the lat and lon to
 localStorage with the Date as the key and the stringified object as the value.
 The final thing that it does is call the doGetItem() function.
 3. doGetItem() - This function uses a for loop to get all of the values from the
-localStorage and writes them on the screen in <p id="pairs">.
+localStorage and writes them on the screen in `<p id="pairs">`.
 
 The CSS magic lies in 3 new styles:
 
