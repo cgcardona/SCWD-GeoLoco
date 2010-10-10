@@ -11,6 +11,7 @@ The goal was to demo how easy it is to build an HTML5/CSS3/jQuery webapp that
 tracks your geo-location and shows all the places you have checked-in in under 30 minutes and 100 lines of code. 
 
 A secondary goal was to show some basic CSS3 features including:
+
 - Rounded Corners
 - Drop Shadows
 - Text Drop Shadows
